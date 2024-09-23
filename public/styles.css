@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth !important;
+}
+html{
+    scroll-behavior: smooth !important;
+    color: #feebeb;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #1585c7, #093e5e);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+}
+
+section{
+    padding-bottom: 2rem;
+}
+section:first-child{
+    padding-top: 1rem;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.profile-queue {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.profile-queue .card{
+    min-width: 18rem;
+}
+.profile-queue img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/****** Scroll bar css *******/
+
+.profile-queue::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.profile-queue::-webkit-scrollbar
+{
+  height: 5px;
+  background-color: transperant;
+}
+
+.profile-queue::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+  border-radius: 6px;
+}
+.card-img, .card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+
+.header-title{
+    display: flex;
+    justify-content: space-between;
+   
+    color: #ffffff;
+}
+.header-title h3{
+   font-size: 1.5rem;
+}
+.header-title .dots span{
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: 3px 0;
+}
+
+.section-title {
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 0 20px 0;
+}
+.section-title h3{
+    font-size: 1rem;
+}
+.section-title span{
+    padding: 3px 7px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: .7rem;
+}
+
+.swiping-cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+}
+.moving-cards{
+    position: relative;
+    display: flex;
+    width: 300px;
+    top: 8rem;
+}
+.swipe-card {
+    position: absolute;
+    left: 0;
+    background: #FFFFFF;
+    width: 100%;
+    
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: 0.4s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+    transition: 0.4s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+    cursor: pointer;
+
+    top: calc(var(--j) * -35px);
+    transform: scale(calc(var(--i) / 10));
+    z-index: var(--i);
+  }
+
+
+  .tags{
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .tags span:nth-child(2){
+    margin-left: 5px;
+    
+  }
+  .tags .verified{
+    color: #8b8be1;
+    font-size: 0.8rem;
+  }
+
+  .tags .premium{
+    color: #083684;
+    font-size: 0.8rem;
+  }
+
+  .card-text{
+    border-bottom: 1px solid #d1cfcf;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+  }
+
+  .custom-card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+.shortlist{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  .shortlist span{
+    margin-left: 3px;
+    font-size: .8rem;
+    margin-top: 3px;
+  }
+
+  .action{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .action .btn{
+    height: 32px;
+  }
+  .action span{
+    font-size: .9rem;
+    font-weight: 700;
+  }
+
+  .interested-profiles{
+    position: relative;
+  }
+  .interested-profiles::before{
+    content: "15";
+    font-family: "Ionicons";
+    position: absolute;
+    height: 20px;
+    width: 40px;
+    border: 1px solid gray;
+    background-color: transparent;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+
+/**************  Responsive ******************/
+
+@media (max-width: 320px) {
+    .header-title{
+        padding: 20px 10px 0 10px;
+    }
+    .section-title {
+        padding: 20px 10px 20px 10px;
+    }
+    
+}
